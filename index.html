@@ -4,12 +4,16 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Farooq Khan Ayub Khan Transport & General Contracting — luxury chauffeur fleet, passenger transport, heavy equipment, cranes and contracting across Abu Dhabi and the UAE." />
-<meta name="theme-color" content="#101a38" />
+<meta name="theme-color" content="#0a0a0c" />
 <title>Farooq Khan Ayub Khan — Transport & General Contracting</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23d9a441'/><text x='32' y='45' font-family='Georgia,serif' font-size='30' font-weight='700' text-anchor='middle' fill='%230a0a0c'>FK</text></svg>">
+<meta property="og:title" content="Farooq Khan Ayub Khan — Transport & General Contracting" />
+<meta property="og:description" content="Luxury chauffeur fleet, passenger transport, heavy equipment, cranes and general contracting across Abu Dhabi and the UAE." />
+<meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=5">
+<link rel="stylesheet" href="css/styles.css?v=6">
 </head>
 <body class="loading">
 
@@ -34,9 +38,16 @@
       <ul id="menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#luxury">Luxury Fleet</a></li>
-        <li><a href="#fleet">Fleet</a></li>
+        <li class="has-drop">
+          <a href="#services" class="drop-toggle" aria-haspopup="true" aria-expanded="false">Services <span class="drop-caret" aria-hidden="true">▾</span></a>
+          <ul class="dropdown">
+            <li><a href="#services">Services Offered</a></li>
+            <li><a href="#luxury">Our Luxury Fleet</a></li>
+            <li><a href="#seaters">Our Luxury Seaters</a></li>
+            <li><a href="#fleet">Our Passenger Fleet</a></li>
+            <li><a href="#heavy">Heavy Equipment &amp; Machinery</a></li>
+          </ul>
+        </li>
         <li><a href="#team">Team</a></li>
         <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
       </ul>
@@ -218,6 +229,46 @@
   </div>
 </section>
 
+<!-- ============ LUXURY SEATERS ============ -->
+<section class="pad lux on-dark" id="seaters">
+  <div class="watermark">SEATERS</div>
+  <div class="orb" style="width:240px;height:240px;bottom:40px;right:-50px;"></div>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow gold center">✦ Seating Options</div>
+      <h2 class="title shimmer">Our <em>Luxury</em> Seaters</h2>
+      <p class="lead" style="margin-top:16px;">From intimate executive journeys to large group travel — premium, chauffeur-driven
+      vehicles for every party size, each finished to the highest standard of comfort and style.</p>
+    </div>
+    <div class="lux-grid">
+      <div class="lux-card reveal scale">
+        <div class="ph" style="background-image:url('assets/c-bus-2.jpg');"><div class="badge">Coach</div></div>
+        <div class="body"><h3>50 Seater Luxury</h3><p>Full-size luxury coach for large groups, corporate events and long-distance travel in total comfort.</p></div>
+      </div>
+      <div class="lux-card reveal scale">
+        <div class="ph" style="background-image:url('assets/0791ac98-0600-4a26-8f5c-8a819a9767c2.JPG');"><div class="badge">Bus</div></div>
+        <div class="body"><h3>37 Seater Luxury</h3><p>Spacious luxury bus, ideal for mid-to-large groups, tours and premium staff transport.</p></div>
+      </div>
+      <div class="lux-card reveal scale">
+        <div class="ph" style="background-image:url('assets/d8b26305-e91c-41ff-8e31-7145e5caf33f.JPG');"><div class="badge">Coaster</div></div>
+        <div class="body"><h3>30 Seater Luxury</h3><p>Premium coaster for comfortable group journeys, events and stylish airport transfers.</p></div>
+      </div>
+      <div class="lux-card reveal scale">
+        <div class="ph" style="background-image:url('assets/774b2ebc-3bbd-4a26-966a-08b2c5be5dc9.JPG');"><div class="badge">Van</div></div>
+        <div class="body"><h3>15 Seater Luxury</h3><p>Executive luxury van for small teams, VIP groups and comfortable family travel.</p></div>
+      </div>
+      <div class="lux-card reveal scale">
+        <div class="ph" style="background-image:url('assets/147be535-c8a1-4133-b065-03c27ddbe8fb.JPG');"><div class="badge">SUV</div></div>
+        <div class="body"><h3>7 Seater Luxury</h3><p>Premium SUV for executives, families and intimate group transfers with first-class comfort.</p></div>
+      </div>
+      <div class="lux-card reveal scale">
+        <div class="ph" style="background-image:url('assets/cce98a11-f25c-43ea-abe2-d91426ee449b.JPG');"><div class="badge">Saloon</div></div>
+        <div class="body"><h3>5 Seater Luxury</h3><p>Chauffeur-driven luxury saloon for VIP, executive and first-class personal travel.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PASSENGER FLEET ============ -->
 <section class="pad galwrap" id="fleet">
   <div class="wrap">
@@ -367,13 +418,14 @@
       <p class="lead">Whether you need luxury chauffeur service, passenger transport, heavy equipment or contracting support — we are your trusted choice across the UAE.</p>
     </div>
     <div class="contact-cards">
-      <a href="tel:0552428090" class="cc reveal"><div class="ic">📞</div><div class="lbl">Call Us</div><div class="val">058 151 6462</div></a>
+      <a href="tel:+971581516462" class="cc reveal"><div class="ic">📞</div><div class="lbl">Call Us</div><div class="val">058 151 6462</div></a>
+      <a href="https://wa.me/971581516462" target="_blank" rel="noopener" class="cc reveal"><div class="ic">💬</div><div class="lbl">WhatsApp</div><div class="val">058 151 6462</div></a>
       <a href="mailto:farooqkhan01999@gmail.com" class="cc reveal"><div class="ic">✉️</div><div class="lbl">Email</div><div class="val">farooqkhan01999@gmail.com</div></a>
       <div class="cc reveal"><div class="ic">📍</div><div class="lbl">Location</div><div class="val">Abu Dhabi, UAE</div></div>
     </div>
     <div class="cta reveal">
-      <a href="tel:0552428090" class="btn btn-gold">Call Now ➜</a>
-      <a href="mailto:farooqkhan01999@gmail.com" class="btn btn-ghost">Send an Email</a>
+      <a href="https://wa.me/971581516462" target="_blank" rel="noopener" class="btn btn-gold">WhatsApp Us ➜</a>
+      <a href="tel:+971581516462" class="btn btn-ghost">Call Now</a>
     </div>
   </div>
 </section>
@@ -389,6 +441,6 @@
 <!-- ============ BACK TO TOP ============ -->
 <button id="toTop" aria-label="Back to top">↑</button>
 
-<script src="js/main.js?v=5"></script>
+<script src="js/main.js?v=6"></script>
 </body>
 </html>

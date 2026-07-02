@@ -42,25 +42,45 @@
     });
   }
 
-  /* ---------- Mobile menu ---------- */
+  /* ---------- Mobile menu + Services dropdown ---------- */
   var burger = doc.getElementById('burger');
   var menu = doc.getElementById('menu');
+  var drop = doc.querySelector('.has-drop');
+  var dropToggle = doc.querySelector('.drop-toggle');
+
+  function closeDrawer() { if (menu) menu.classList.remove('open'); if (hdr) hdr.classList.remove('menu-open'); }
+  function closeDrop() { if (drop) drop.classList.remove('open'); if (dropToggle) dropToggle.setAttribute('aria-expanded', 'false'); }
+
   if (burger && menu) {
     burger.addEventListener('click', function () {
       menu.classList.toggle('open');
       hdr.classList.toggle('menu-open');
     });
     menu.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') {
-        menu.classList.remove('open');
-        hdr.classList.remove('menu-open');
-      }
+      var a = e.target.closest('a');
+      if (!a) return;
+      if (a.classList.contains('drop-toggle')) return; // toggled separately, don't close drawer
+      closeDrawer();
+      closeDrop();
     });
+  }
+
+  if (dropToggle && drop) {
+    // click/tap opens the categories (works on desktop + mobile; hover also opens on desktop via CSS)
+    dropToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      var open = drop.classList.toggle('open');
+      dropToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // close when clicking outside or pressing Escape
+    doc.addEventListener('click', function (e) { if (!drop.contains(e.target)) closeDrop(); });
+    doc.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDrop(); });
   }
 
   /* ---------- Scroll-spy: highlight active nav link ---------- */
   var sections = [].slice.call(doc.querySelectorAll('section[id]'));
   var navLinks = [].slice.call(doc.querySelectorAll('nav a[href^="#"]'));
+  var dropTargets = ['services', 'luxury', 'seaters', 'fleet', 'heavy'];
   function spy() {
     var pos = (window.scrollY || doc.documentElement.scrollTop) + 120;
     var current = '';
@@ -70,6 +90,8 @@
     navLinks.forEach(function (a) {
       a.classList.toggle('active', a.getAttribute('href') === '#' + current);
     });
+    // keep the Services toggle highlighted whenever any of its categories is in view
+    if (dropToggle) dropToggle.classList.toggle('active', dropTargets.indexOf(current) > -1);
   }
 
   /* ---------- Count-up numbers ---------- */
