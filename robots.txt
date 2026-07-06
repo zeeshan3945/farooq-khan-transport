@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zeeshan3945.github.io/farooq-khan-transport/sitemap.xml
