@@ -300,6 +300,11 @@ body:not(.loading) .hero-bar{opacity:1;transform:none;transition-delay:.92s;}
 .lux-card h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold-light);margin-bottom:6px;}
 .lux-card p{font-size:12.5px;font-weight:300;color:#b6b0a6;}
 
+/* Luxury Seaters — photos vary in orientation, so show the whole vehicle (no crop) */
+#seaters .lux-card .ph{height:230px;background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#100f16;}
+#seaters .lux-card:hover .ph{background-size:contain;}
+#seaters .lux-card .ph::before{background:linear-gradient(transparent 68%,rgba(6,5,7,.66));}
+
 /* ---------- SERVICES (compact, fits one screen) ---------- */
 .services-sec{padding:clamp(38px,4.2vw,60px) 0;}
 .services-sec .sec-head{margin-bottom:22px;}
