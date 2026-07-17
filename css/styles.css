@@ -300,15 +300,19 @@ body:not(.loading) .hero-bar{opacity:1;transform:none;transition-delay:.92s;}
 .lux-card h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold-light);margin-bottom:6px;}
 .lux-card p{font-size:12.5px;font-weight:300;color:#b6b0a6;}
 
-/* Luxury Seaters — full vehicle on a dark spotlight backdrop (no crop, no blur smear) */
-#seaters .lux-card .ph{height:238px;overflow:hidden;background:#0c0b10;}
-#seaters .lux-card .ph::before{inset:0;z-index:0;filter:none;transform:none;
-  background:
-    radial-gradient(60% 46% at 50% 40%,rgba(217,164,65,.13),transparent 62%),
-    radial-gradient(135% 100% at 50% 36%,#2a2934 0%,#17161d 55%,#0b0a10 100%);}
-#seaters .lux-card .ph::after{content:"";position:absolute;background:none;background-image:inherit;background-size:contain;background-repeat:no-repeat;background-position:center;inset:16px;z-index:1;transform:none;transition:transform .6s var(--ease);}
-#seaters .lux-card:hover .ph::after{transform:scale(1.05);}
-#seaters .lux-card:hover .ph::before{transform:none;}
+/* Per-vehicle WhatsApp enquiry overlay (revealed on card click/tap) */
+.lux-card.has-wa{cursor:pointer;}
+.veh-wa{position:absolute;inset:0;z-index:6;display:flex;align-items:center;justify-content:center;padding:12px;
+  background:rgba(6,5,7,.66);backdrop-filter:blur(2px);opacity:0;visibility:hidden;
+  transition:opacity .3s var(--ease),visibility .3s;}
+.lux-card.wa-open .veh-wa{opacity:1;visibility:visible;}
+.veh-wa a{display:inline-flex;align-items:center;gap:9px;background:#25d366;color:#062e16;font-weight:700;
+  font-size:12.5px;letter-spacing:.3px;padding:11px 18px;border-radius:30px;white-space:nowrap;
+  box-shadow:0 10px 26px rgba(37,211,102,.45);transform:translateY(10px) scale(.95);
+  transition:transform .35s var(--ease),box-shadow .25s;}
+.lux-card.wa-open .veh-wa a{transform:none;}
+.veh-wa a:hover{box-shadow:0 14px 34px rgba(37,211,102,.62);}
+.veh-wa a svg{width:19px;height:19px;fill:currentColor;flex:none;}
 
 /* ---------- SERVICES (compact, fits one screen) ---------- */
 .services-sec{padding:clamp(38px,4.2vw,60px) 0;}
@@ -348,22 +352,10 @@ body:not(.loading) .hero-bar{opacity:1;transform:none;transition-delay:.92s;}
 .svc-mini h3{font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:3px;line-height:1.25;}
 .svc-mini p{font-size:11.8px;font-weight:300;color:var(--grey);line-height:1.45;}
 
-/* ---------- GALLERY ---------- */
+/* ---------- FLEET / HEAVY SECTION BACKGROUNDS ---------- */
+/* (Passenger Fleet and Heavy Equipment now use the Luxury Fleet .lux-card design) */
 .galwrap{background:var(--bg-2);}
 .heavy-wrap{background:var(--bg-2);}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.gcard{border-radius:20px;overflow:hidden;background:var(--surface);box-shadow:0 10px 28px rgba(0,0,0,.5);position:relative;border:1px solid var(--line);transition:transform .4s var(--ease),box-shadow .4s,border-color .4s;}
-.gcard:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg);border-color:var(--gold-line);}
-.gcard .pic{position:relative;overflow:hidden;height:212px;background:#0c0b10;}
-.gcard .pic::before{content:"";position:absolute;inset:0;z-index:0;
-  background:
-    radial-gradient(60% 46% at 50% 40%,rgba(217,164,65,.13),transparent 62%),
-    radial-gradient(135% 100% at 50% 36%,#2a2934 0%,#17161d 55%,#0b0a10 100%);}
-.gcard .pic::after{content:"";position:absolute;inset:14px;z-index:1;background-image:inherit;background-size:contain;background-repeat:no-repeat;background-position:center;transition:transform .6s var(--ease);}
-.gcard:hover .pic::after{transform:scale(1.05);}
-.gcard .tag{position:absolute;top:12px;left:12px;background:rgba(6,5,7,.82);border:1px solid var(--gold-line);color:var(--gold-light);font-size:10px;letter-spacing:1.3px;text-transform:uppercase;padding:5px 12px;border-radius:30px;font-weight:600;z-index:2;}
-.gcard .cap{padding:16px 18px;font-weight:600;font-size:15px;color:var(--ink);background:linear-gradient(180deg,#1b1a20,#16151a);display:flex;align-items:center;gap:10px;}
-.gcard .cap::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--grad-warm);flex:none;}
 
 /* ---------- TEAM ---------- */
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
